@@ -32,7 +32,7 @@ const options = {
 
 cron.schedule("*/15 * * * * *", function () {
     // API call goes here
-    console.log("running a task every minute");
+    console.log("CRON SUCCESSFULLY TRIGGERED");
     request(options, function (error, response, body) {
           console.log('error:', error); // Print the error if one occurred and handle it
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
