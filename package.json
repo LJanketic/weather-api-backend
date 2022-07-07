@@ -19,6 +19,9 @@
   "homepage": "https://github.com/LJanketic/weather-api-backend#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.1",
+    "request": "^2.88.2",
+    "uuid": "^8.3.2"
   }
 }
