@@ -16,22 +16,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('assets'));
 app.use(morgan('tiny'));
-
-/**
- * ROUTE IMPORTS
- * 
- */
-
-const indexRouter = require('./routes/index');
-
-/**
- * ROUTE IMPORTS
- * 
- */
-
-app.use('/weather', indexRouter);
 
 /**
  * TEST
