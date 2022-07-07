@@ -1,7 +1,9 @@
 /**
  * IMPORTS
- * 
+ *
  */
+
+// const constConfig = require('./config.json');
 
 const express = require('express');
 const morgan = require('morgan');
@@ -11,7 +13,7 @@ const app = express();
 
 /**
  * MIDDLEWARE
- * 
+ *
  */
 
 app.use(express.json());
@@ -20,7 +22,7 @@ app.use(morgan('tiny'));
 
 /**
  * TEST
- * 
+ *
  */
 
 const options = {
@@ -30,14 +32,14 @@ const options = {
     }
 };
 
-cron.schedule("*/15 * * * * *", function () {
+cron.schedule('*/15 * * * * *', function () {
     // API call goes here
-    console.log("CRON SUCCESSFULLY TRIGGERED");
+    console.log('CRON SUCCESSFULLY TRIGGERED');
     request(options, function (error, response, body) {
-          console.log('error:', error); // Print the error if one occurred and handle it
-          console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-          console.log(body)
+        console.log('error:', error); // Print the error if one occurred and handle it
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        console.log(body);
     });
-})
+});
 
 app.listen(3000, () => console.log('Listening on port 3000...'));
