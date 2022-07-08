@@ -2,16 +2,11 @@ const cron = require('node-cron');
 const request = require('request');
 const constConfig = require('../config');
 
-// const options = {
-//     url: constConfig.locationURLs.zagreb,
-//     headers: {
-//         'User-Agent': constConfig.headers
-//     }
-// };
 
 module.exports.zagrebCron = async () => {
     cron.schedule('*/15 * * * * *', function () {
-        // API call goes here
+        // EXAMPLE CALL FOR NOW
+        // TODO: Make an iteration of some sort with this cron to go trough all possible API requests
         console.log('CRON SUCCESSFULLY TRIGGERED');
         request(constConfig.ZAGREB_LOCATION_URL, { headers: {'User-Agent': constConfig.HEADERS } }, function (error, response, body) {
             console.log('error:', error); // Print the error if one occurred and handle it
