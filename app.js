@@ -22,7 +22,7 @@ app.use(morgan('tiny'));
  *
  */
 
-cronMethods.zagrebCron();
+cronMethods.cityCron();
 
 
 module.exports = app;
